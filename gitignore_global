@@ -1,0 +1,43 @@
+# ~/.gitignore_global
+
+### See https://github.com/github/gitignore for more
+
+# Dotfiles #
+############
+.*
+!.gitignore
+
+# Compiled assets #
+###################
+*.class
+bin/
+target/
+
+# Log files #
+#############
+*.log
+log/
+logs/
+
+# Temporary files #
+###################
+*~
+*.swp
+*.tmp
+tmp/
+
+# Eclipse #
+###########
+.cache
+.classpath
+.metadata
+.project
+.scala_dependencies
+.settings/
+
+# Mac OS X generated files #
+############################
+._*
+.DS_Store
+.Spotlight-*
+.Trashes
