@@ -3,8 +3,10 @@
 export PATH=$HOME/usr/bin:$PATH
 
 export JAVA_HOME=/Library/Java/Home
-export CLASSPATH=.
 export JAVA_OPTS="-server -Xms128m -Xmx1024m -XX:MaxPermSize=256m"
+export CLASSPATH=.
+
+export ANT_HOME=$HOME/usr/ant
 
 export BLOCKSIZE=K
 export PAGER='less'
@@ -19,6 +21,8 @@ alias rm='rm -i'
 
 alias h='history'
 alias ..='cd ..'
+
+alias gvim='gvim -reverse'
 
 PS1='\h:\w\$ '
 
