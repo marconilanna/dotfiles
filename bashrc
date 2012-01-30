@@ -26,9 +26,14 @@ HISTIGNORE="ls:pwd:w:ps:jobs:bg:fg:clear:exit"
 HISTCONTROL=ignoredups
 HISTFILESIZE=2000
 HISTSIZE=200
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 umask 0077
 
 mesg n
+
+# Git tab completion
+GTC='/usr/local/git/contrib/completion/git-completion.bash'
+[ -r $GTC ] && . $GTC 
