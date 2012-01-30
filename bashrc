@@ -24,7 +24,7 @@ alias ..='cd ..'
 
 alias gvim='gvim -reverse'
 
-PS1='\h:\w\$ '
+PS1='\h:\w$(__git_ps1 " [%s]")\$ '
 
 HISTIGNORE="ls:pwd:w:ps:jobs:bg:fg:clear:exit"
 HISTCONTROL=ignoredups
