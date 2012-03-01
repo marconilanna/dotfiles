@@ -41,3 +41,16 @@ mesg n
 # Git tab completion
 GTC='/usr/local/git/contrib/completion/git-completion.bash'
 [ -r $GTC ] && . $GTC 
+
+# Git aliases
+alias add='git add'
+alias branch='git branch'
+alias ca='git commit -a'
+alias commit='git commit'
+alias cout='git checkout'
+alias dif='git diff'
+alias log='git log'
+alias master='git checkout master'
+alias pull='git pull'
+alias push='git push'
+alias status='git status'
