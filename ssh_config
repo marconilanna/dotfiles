@@ -3,6 +3,11 @@
 Host xyz
 Hostname xyz.com
 User username
+
+# Global Defaults
+Host *
+IdentityFile ~/.ssh/id_rsa
 Port 22
 Protocol 2
-IdentityFile ~/.ssh/id_rsa
+ServerAliveInterval 60
+TCPKeepAlive no
