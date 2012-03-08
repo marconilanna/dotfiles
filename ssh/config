@@ -6,6 +6,7 @@ User username
 
 # Global Defaults
 Host *
+DynamicForward 5000
 IdentityFile ~/.ssh/id_rsa
 Port 22
 Protocol 2
