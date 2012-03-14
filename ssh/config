@@ -3,10 +3,11 @@
 Host xyz
 Hostname xyz.com
 User username
+# LocalForward 1080 localhost:80     ### TCP tunnel
+# DynamicForward 1080                ### SOCKS proxy
 
 # Global Defaults
 Host *
-DynamicForward 5000
 IdentityFile ~/.ssh/id_rsa
 Port 22
 Protocol 2
