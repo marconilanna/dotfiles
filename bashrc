@@ -24,7 +24,7 @@ alias ..='cd ..'
 
 alias gvim='gvim -reverse'
 
-PS1='\h:\w$(__git_ps1 " [%s]")\$ '
+PS1='\h:\w$(__git_ps1 " (%s)")\$ '
 
 HISTIGNORE="ls:pwd:w:ps:jobs:bg:fg:clear:exit"
 HISTCONTROL=ignoredups
@@ -45,7 +45,6 @@ GTC='/usr/local/git/contrib/completion/git-completion.bash'
 # Git aliases
 alias add='git add'
 alias branch='git branch'
-alias ca='git commit -a'
 alias commit='git commit'
 alias cout='git checkout'
 alias dif='git diff'
