@@ -45,6 +45,7 @@ GTC='/usr/local/git/contrib/completion/git-completion.bash'
 # Git aliases
 alias add='git add'
 alias branch='git branch'
+alias ca='git commit -a'
 alias commit='git commit'
 alias cout='git checkout'
 alias dif='git diff'
