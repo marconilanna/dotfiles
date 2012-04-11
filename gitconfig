@@ -14,3 +14,9 @@
 	whitespace = fix
 [color]
 	ui = true
+[diff]
+	tool = opendiff
+[merge]
+	tool = opendiff
+[difftool]
+	prompt = false
