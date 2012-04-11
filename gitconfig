@@ -20,3 +20,5 @@
 	tool = opendiff
 [difftool]
 	prompt = false
+[branch]
+	autosetuprebase = always
