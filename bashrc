@@ -28,8 +28,8 @@ PS1='\h:\w$(__git_ps1 " (%s)")\$ '
 
 HISTIGNORE="ls:pwd:w:ps:jobs:bg:fg:clear:exit"
 HISTCONTROL=ignoredups
-HISTFILESIZE=2000
-HISTSIZE=200
+HISTFILESIZE=10000
+HISTSIZE=500
 
 # append to the history file, don't overwrite it
 shopt -s histappend
