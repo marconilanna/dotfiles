@@ -9,7 +9,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
-	whitespace = fix,indent-with-non-tab,space-before-tab,trailing-space,tabwidth=4
+	whitespace = indent-with-non-tab,space-before-tab,trailing-space,tabwidth=4
 [apply]
 	whitespace = fix
 [color]
