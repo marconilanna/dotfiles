@@ -2,32 +2,31 @@
 
 ### See https://github.com/github/gitignore for more
 
-# Dotfiles #
-############
+# Dotfiles
 .*
 !.gitignore
 
-# Compiled assets #
-###################
+# Compiled assets
 *.class
 bin/
 target/
 
-# Log files #
-#############
+# Logs
 *.log
 log/
 logs/
 
-# Temporary files #
-###################
+# Temporary files
 *~
-*.swp
+*.bak
+*.old
 *.tmp
 tmp/
 
-# Eclipse #
-###########
+# vim
+.*.sw[a-z]
+
+# Eclipse
 .cache
 .classpath
 .metadata
@@ -35,9 +34,36 @@ tmp/
 .scala_dependencies
 .settings/
 
-# Mac OS X generated files #
-############################
+# Mac OS X
 ._*
 .DS_Store
 .Spotlight-*
 .Trashes
+
+# Windows
+Desktop.ini
+Thumbs.db
+
+# Compressed files
+*.7z
+*.bz2
+*.bzip
+*.gz
+*.lzma
+*.rar
+*.tgz
+*.txz
+*.xz
+*.Z
+*.zip
+
+# Packages
+*.deb
+*.dmg
+*.egg
+*.gem
+*.iso
+*.msi
+*.rpm
+*.tar
+*.xpi
