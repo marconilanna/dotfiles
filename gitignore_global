@@ -9,7 +9,6 @@
 # Compiled assets
 *.class
 bin/
-target/
 
 # Logs
 *.log
@@ -22,6 +21,9 @@ logs/
 *.old
 *.tmp
 tmp/
+
+# sbt
+target/
 
 # vim
 .*.sw[a-z]
