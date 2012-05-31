@@ -10,6 +10,9 @@
 *.class
 bin/
 
+# sbt
+target/
+
 # Logs
 *.log
 log/
@@ -20,10 +23,8 @@ logs/
 *.bak
 *.old
 *.tmp
+nohup.out
 tmp/
-
-# sbt
-target/
 
 # vim
 .*.sw[a-z]
