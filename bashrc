@@ -24,7 +24,7 @@ alias ..='cd ..'
 
 alias gvim='gvim -reverse'
 
-PS1='\h:\w$(__git_ps1 " (%s)")\$ '
+PS1='\h:\w$(__git_ps1 " [%s]")\$ '
 
 HISTIGNORE="bg:cd:clear:exit:fg:jobs:ls:ps:pwd:w"
 HISTCONTROL=ignoredups
@@ -64,4 +64,5 @@ alias rlog='    git reflog                         '
 alias slog='    git shortlog                       '
 alias stash='   git stash                          '
 alias status='  git status                         '
-alias summary=' git log                   --summary'
+
+alias sslog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
