@@ -6,10 +6,16 @@ User username
 # LocalForward 1080 localhost:80     ### TCP tunnel
 # DynamicForward 1080                ### SOCKS proxy
 
+# GitHub shorthand, just use: git clone ghub:user/repository
+Host ghub
+Hostname github.com
+User git
+IdentityFile ~/.ssh/github.key
+
 # Global Defaults
 Host *
-IdentityFile ~/.ssh/id_rsa
 Port 22
 Protocol 2
+IdentityFile ~/.ssh/id_rsa
 ServerAliveInterval 60
 TCPKeepAlive no
