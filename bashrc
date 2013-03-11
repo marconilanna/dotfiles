@@ -1,6 +1,6 @@
 # ~/.bashrc
 
-export PATH=$HOME/usr/bin:$PATH
+export PATH=$HOME/usr/bin:/usr/local/git/bin:/usr/local/mysql/bin:$PATH
 
 export JAVA_HOME=/Library/Java/Home
 export JAVA_OPTS="-server -Xss8m -Xms100m -Xmx1500m -XX:MaxPermSize=500m"
@@ -32,8 +32,8 @@ PS1='\h:\w$(__git_ps1 " [%s]")\$ '
 
 HISTIGNORE="bg:cd:clear:exit:fg:jobs:ls:ps:pwd:w"
 HISTCONTROL=ignoredups
-HISTFILESIZE=10000
-HISTSIZE=500
+HISTFILESIZE=200000
+HISTSIZE=2000
 
 # append to the history file, don't overwrite it
 shopt -s histappend
