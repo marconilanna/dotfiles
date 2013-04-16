@@ -26,3 +26,5 @@
 	prompt = false
 [branch]
 	autosetuprebase = always
+[push]
+	default = simple
