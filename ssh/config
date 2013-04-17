@@ -12,7 +12,7 @@ Hostname github.com
 User git
 IdentityFile ~/.ssh/github.key
 
-# Global Defaults
+# Global defaults
 Host *
 Port 22
 Protocol 2
