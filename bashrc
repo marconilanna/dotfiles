@@ -28,9 +28,7 @@ alias gvim='gvim -reverse'
 
 alias curlhead='curl -o /dev/null -s -D -'
 
-GTP='/usr/local/git/contrib/completion/git-prompt.sh'
-[ -r $GTP ] && . $GTP
-PS1='\h:\w$(__git_ps1 " [%s]")\$ '
+PS1='\h:\w\$ '
 
 HISTIGNORE="bg:cd:clear:exit:fg:jobs:ls:ps:pwd:w"
 HISTCONTROL=ignoredups
@@ -43,6 +41,11 @@ shopt -s histappend
 umask 0077
 
 mesg n
+
+GTP='/usr/local/git/contrib/completion/git-prompt.sh'
+[ -r $GTP ] && . $GTP && PS1='\h:\w$(__git_ps1 " [%s]")\$ '
+
+GIT_PS1_SHOWDIRTYSTATE=1
 
 # Git tab completion
 GTC='/usr/local/git/contrib/completion/git-completion.bash'
