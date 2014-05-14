@@ -12,6 +12,8 @@
 	whitespace = indent-with-non-tab,space-before-tab,trailing-space,tabwidth=4
 [apply]
 	whitespace = fix
+[branch]
+	autosetuprebase = always
 [color]
 	ui = true
 [color "status"]
@@ -24,7 +26,10 @@
 	tool = opendiff
 [difftool]
 	prompt = false
-[branch]
-	autosetuprebase = always
+[grep]
+	extendRegexp = true
+	lineNumber = true
+[help]
+	autocorrect = 1
 [push]
 	default = simple
