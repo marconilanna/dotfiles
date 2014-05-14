@@ -6,5 +6,7 @@ set completion-prefix-display-length 2
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+$if Bash
+	"\e[A": history-search-backward
+	"\e[B": history-search-forward
+$endif

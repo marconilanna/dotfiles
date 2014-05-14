@@ -1,16 +1,17 @@
 # ~/.bashrc
 
-export PATH=$HOME/usr/bin:$PATH
+export PATH="$HOME/usr/bin:$PATH"
 
-export JAVA_HOME=/Library/Java/Home
-export JAVA_OPTS="-server -Xss8m -Xms100m -Xmx1500m -XX:MaxPermSize=500m"
-export CLASSPATH=.
+export JAVA_HOME='/Library/Java/Home'
+export JAVA_OPTS='-server -Xss8m -Xms100m -Xmx1500m -XX:MaxPermSize=500m'
+export CLASSPATH='.'
 
-export BLOCKSIZE=K
+export BLOCKSIZE='K'
 export PAGER='less'
 
 alias ls='ls -AFGl'
 alias dir='\ls -AFG'
+alias cls='clear; ls'
 alias cpl='clear; pwd; ls'
 
 alias cp='cp -i'
@@ -32,6 +33,7 @@ alias zfgrep='zfgrep --color=auto'
 alias c='clear'
 alias h='history'
 
+alias cd-='cd -'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -44,10 +46,10 @@ alias header='curl -I'
 
 PS1='\h:\w\$ '
 
-HISTIGNORE="bg:cd:clear:exit:fg:jobs:ls:ps:pwd:w"
-HISTCONTROL=ignoredups
-HISTFILESIZE=200000
-HISTSIZE=2000
+HISTIGNORE='bg:c:cd:clear:exit:fg:jobs:ls:ps:pwd:w'
+HISTCONTROL='ignoredups'
+HISTFILESIZE=100000
+HISTSIZE=1000
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -55,6 +57,10 @@ shopt -s histappend
 umask 0077
 
 mesg n
+
+#
+# https://github.com/git/git/tree/master/contrib/completion
+#
 
 # Git prompt
 GP='/usr/local/git/contrib/completion/git-prompt.sh'
@@ -77,6 +83,7 @@ alias cpick='      git cherry-pick'
 alias dif='        git diff'
 alias difftool='   git difftool'
 alias fetch='      git fetch'
+alias ggrep='      git grep --break --heading --line-number'
 alias ignored='    git status --ignored'
 alias list='       git stash list'
 alias log='        git log --graph --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset %Cgreen%cr%Creset - %s%C(yellow)%d" --abbrev-commit --'
