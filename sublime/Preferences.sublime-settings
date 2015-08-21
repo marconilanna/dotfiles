@@ -21,6 +21,9 @@
 	// white space within the selection, and "all" to draw all white space
 	"draw_white_space": "all",
 
+	// Allows tabs to scroll left and right, instead of simply shrinking
+	"enable_tab_scrolling": false,
+
 	// Set to true to ensure the last line of the file ends in a newline
 	// character when saving
 	"ensure_newline_at_eof_on_save": true,
@@ -35,11 +38,32 @@
 	// level
 	"indent_subsequent_lines": false,
 
-	// Set vertical rulers in specified columns.
-	// Use "rulers": [80] for just one ruler
-	// Default value is []
+	// Spacing between the gutter and the text
+	"margin": 0,
+
+	// OS X only: When files are opened from finder, or by dragging onto the
+	// dock icon, this controls if a new window is created or not.
+	"open_files_in_new_window": false,
+
+	// Columns in which to display vertical rulers
 	"rulers": [72, 80, 100, 110],
-    
+
+	// By default, shift+tab will only unindent if the selection spans
+	// multiple lines. When pressing shift+tab at other times, it'll insert a
+	// tab character - this allows tabs to be inserted when tab_completion is
+	// enabled. Set this to true to make shift+tab always unindent, instead of
+	// inserting tabs.
+	"shift_tab_unindent": true,
+
+	// Display file encoding in the status bar
+	"show_encoding": true,
+
+	// Display line endings in the status bar
+	"show_line_endings": true,
+
+	// Set to true to turn spell checking on by default
+	"spell_check": true,
+
 	// The number of spaces a tab is considered equal to
 	"tab_size": 2,
 
