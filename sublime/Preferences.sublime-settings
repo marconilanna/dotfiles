@@ -2,41 +2,6 @@
 	// Sets the colors used within the text area
 	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
 
-	// The number of spaces a tab is considered equal to
-	"tab_size": 3,
-
-	// Set to true to insert spaces when tab is pressed
-	"translate_tabs_to_spaces": false,
-
-	// If translate_tabs_to_spaces is true, use_tab_stops will make tab and
-	// backspace insert/delete up to the next tabstop
-	"use_tab_stops": true,
-
-	// Set to false to disable detection of tabs vs. spaces on load
-	"detect_indentation": false,
-
-	// Set to a value other than 0 to force wrapping at that column rather than the
-	// window width
-	"wrap_width": 99,
-
-	// Set to false to prevent word wrapped lines from being indented to the same
-	// level
-	"indent_subsequent_lines": false,
-
-	// If enabled, will highlight any line with a caret
-	"highlight_line": true,
-
-	// Set to "none" to turn off drawing white space, "selection" to draw only the
-	// white space within the selection, and "all" to draw all white space
-	"draw_white_space": "all",
-
-	// Set to true to removing trailing white space on save
-	"trim_trailing_white_space_on_save": true,
-
-	// Set to true to ensure the last line of the file ends in a newline
-	// character when saving
-	"ensure_newline_at_eof_on_save": true,
-
 	// Encoding used when saving new files, and files opened with an undefined
 	// encoding (e.g., plain ascii files). If a file is opened with a specific
 	// encoding (either detected or given explicitly), this setting will be
@@ -49,6 +14,46 @@
 	// 'unix' (LF only).
 	"default_line_ending": "system",
 
+	// Set to false to disable detection of tabs vs. spaces on load
+	"detect_indentation": true,
+
+	// Set to "none" to turn off drawing white space, "selection" to draw only the
+	// white space within the selection, and "all" to draw all white space
+	"draw_white_space": "all",
+
+	// Set to true to ensure the last line of the file ends in a newline
+	// character when saving
+	"ensure_newline_at_eof_on_save": true,
+
+	// If enabled, will highlight any line with a caret
+	"highlight_line": true,
+
 	// Makes tabs with modified files more visible
-	"highlight_modified_tabs": false
+	"highlight_modified_tabs": true,
+
+	// Set to false to prevent word wrapped lines from being indented to the same
+	// level
+	"indent_subsequent_lines": false,
+
+	// Set vertical rulers in specified columns.
+	// Use "rulers": [80] for just one ruler
+	// Default value is []
+	"rulers": [72, 80, 100, 110],
+    
+	// The number of spaces a tab is considered equal to
+	"tab_size": 2,
+
+	// Set to true to insert spaces when tab is pressed
+	"translate_tabs_to_spaces": false,
+
+	// Set to true to removing trailing white space on save
+	"trim_trailing_white_space_on_save": true,
+
+	// If translate_tabs_to_spaces is true, use_tab_stops will make tab and
+	// backspace insert/delete up to the next tabstop
+	"use_tab_stops": true,
+
+	// Set to a value other than 0 to force wrapping at that column rather than the
+	// window width
+	"wrap_width": 100
 }
