@@ -1,7 +1,12 @@
 // ~/.sbt/0.13/plugins/plugins.sbt
 
 // Adds a `dependencyUpdates` task to check Maven repositories for dependency updates
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.1.8")
+// https://github.com/rtimush/sbt-updates
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.1.9")
+
+// https://github.com/orrsella/sbt-stats
+addSbtPlugin("com.orrsella" % "sbt-stats" % "1.0.5")
 
 // Creates Eclipse project definitions (.classpath, .project, .settings/)
-//addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "3.0.0")
+// https://github.com/typesafehub/sbteclipse
+//addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")
