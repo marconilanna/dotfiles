@@ -8,6 +8,7 @@ import
 , scala.concurrent.{Await, Future}
 , scala.concurrent.ExecutionContext.Implicits.global
 , scala.concurrent.duration._
+, scala.language.experimental.macros
 , scala.reflect.macros.blackbox
 , scala.util.{Either, Failure, Left, Random, Right, Success, Try}
 , scala.util.control.NonFatal
@@ -41,7 +42,7 @@ initialize ~= { _ =>
 }
 
 shellPrompt := { state =>
-  import scala.io.AnsiColor.{CYAN, RESET}
+  import scala.Console.{CYAN, RESET}
   val p = Project.extract(state)
   val name = p.getOpt(sbt.Keys.name) getOrElse p.currentProject.id
   s"[$CYAN$name$RESET] $$ "
