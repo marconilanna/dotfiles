@@ -3,10 +3,12 @@
 set bell-style visible
 set completion-ignore-case on
 set completion-prefix-display-length 2
+set history-size 1000
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
 $if Bash
-	"\e[A": history-search-backward
-	"\e[B": history-search-forward
+  "\e[A": history-search-backward
+  "\e[B": history-search-forward
+  Space: magic-space
 $endif

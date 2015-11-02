@@ -9,9 +9,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
-	whitespace = indent-with-non-tab,space-before-tab,trailing-space,tabwidth=4
-[apply]
-	whitespace = fix
+	whitespace = space-before-tab,trailing-space
 [branch]
 	autosetuprebase = always
 [color]
@@ -22,8 +20,6 @@
 	untracked = cyan
 [diff]
 	tool = opendiff
-[merge]
-	tool = opendiff
 [difftool]
 	prompt = false
 [grep]
@@ -31,5 +27,7 @@
 	lineNumber = true
 [help]
 	autocorrect = 1
+[merge]
+	tool = opendiff
 [push]
 	default = simple

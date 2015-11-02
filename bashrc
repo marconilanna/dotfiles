@@ -2,12 +2,24 @@
 
 export PATH="$HOME/usr/bin:$PATH"
 
-export JAVA_HOME='/Library/Java/Home'
-export JAVA_OPTS='-server -Xss8m -Xms100m -Xmx1500m -XX:MaxPermSize=500m'
+jdk() { export JAVA_HOME=$(/usr/libexec/java_home -v 1.$1) }
+
+jdk 8
+
+export JAVA_OPTS='-server -Xss10m -Xms50m -Xmx1500m -XX:ReservedCodeCacheSize=100m'
 export CLASSPATH='.'
 
+SCALA_OPTS='-encoding UTF-8 -target:jvm-1.8 -Dscala.color -Xexperimental -Xfuture -Ybackend:GenBCode'
+SCALAC_OPTS='-deprecation -feature -g:vars -optimise -unchecked -Xdev -Xfatal-warnings -Xlint:_ -Yinline-warnings -Yno-adapted-args -Yopt:_ -Ywarn-dead-code -Ywarn-unused -Ywarn-unused-import -Ywarn-value-discard'
+alias scalac="scalac $SCALA_OPTS $SCALAC_OPTS"
+alias scala="scala $SCALA_OPTS -language:_ -nowarn"
+
+export SBT_OPTS=$JAVA_OPTS
+
 export BLOCKSIZE='K'
+export LESS='--ignore-case'
 export PAGER='less'
+LESSHISTFILE="-"
 
 alias ls='ls -AFGl'
 alias dir='\ls -AFG'
@@ -21,7 +33,11 @@ alias md='mkdir -pv'
 alias mkdir='mkdir -pv'
 
 alias df='df -H'
-alias du='du -sc * | sort -n'
+alias dusc='du -sc * | sort -n'
+alias du.='du -sc . | sort -n'
+
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -46,13 +62,15 @@ alias header='curl -I'
 
 PS1='\h:\w\$ '
 
-HISTIGNORE='bg:c:cd:clear:exit:fg:jobs:ls:ps:pwd:w'
-HISTCONTROL='ignoredups'
+HISTIGNORE='bg:c:cd:cd ..:clear:exit:fg:jobs:ls:ps:pwd:w'
+HISTCONTROL='ignorespace:erasedups'
 HISTFILESIZE=100000
 HISTSIZE=1000
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+set -o ignoreeof
 
 umask 0077
 
@@ -67,10 +85,12 @@ GP='/usr/local/git/contrib/completion/git-prompt.sh'
 [ -r $GP ] && . $GP && PS1='\h:\w$(__git_ps1 " [%s]")\$ '
 
 GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
 
-# Git tab completion
-GTC='/usr/local/git/contrib/completion/git-completion.bash'
-[ -r $GTC ] && . $GTC 
+# Git completion
+GC='/usr/local/git/contrib/completion/git-completion.bash'
+[ -r $GC ] && . $GC
 
 # Git aliases
 alias add='        git add'
@@ -85,10 +105,12 @@ alias difftool='   git difftool'
 alias fetch='      git fetch'
 alias ggrep='      git grep --break --heading --line-number'
 alias ignored='    git status --ignored'
+alias lastcommit=' git diff HEAD~1'
 alias list='       git stash list'
-alias log='        git log --graph --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset %Cgreen%cr%Creset - %s%C(yellow)%d" --abbrev-commit --'
+alias log='        git log --abbrev-commit --graph --no-merges --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset %Cgreen%cr%Creset - %s%C(yellow)%d%Creset"'
 alias master='     git checkout master'
 alias merg='       git merge'
+alias mm='         git merge master'
 alias pop='        git stash pop'
 alias pull='       git pull --rebase '
 alias push='       git push'
@@ -100,4 +122,5 @@ alias show='       git stash show -p'
 alias staged='     git diff --staged'
 alias stash='      git stash save'
 alias status='     git status'
+alias uncommit='   git reset --soft HEAD~1'
 alias unstage='    git reset HEAD'
