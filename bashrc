@@ -2,7 +2,7 @@
 
 export PATH="$HOME/usr/bin:$PATH"
 
-jdk() { export JAVA_HOME=$(/usr/libexec/java_home -v 1.$1) }
+jdk() { export JAVA_HOME=$(/usr/libexec/java_home -v 1.$1); }
 
 jdk 8
 
