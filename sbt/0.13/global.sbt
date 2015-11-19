@@ -37,6 +37,12 @@ showSuccess := true
 
 showTiming := true
 
+// Clear the screen before each triggered run (e.g, ~test)
+triggeredMessage := Watched.clearWhenTriggered
+
+// Do not exit sbt when Ctrl-C is used to stop a running app
+cancelable in Global := true
+
 // Enable colors in Scala console (2.11.4)
 initialize ~= { _ =>
   val ansi = System.getProperty("sbt.log.noformat", "false") != "true"
