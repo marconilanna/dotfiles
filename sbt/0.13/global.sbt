@@ -63,5 +63,3 @@ shellPrompt := { state =>
   val name = p.getOpt(sbt.Keys.name) getOrElse p.currentProject.id
   s"$BLUE$BOLD$name$RESET $BOLD\u25b6$RESET "
 }
-
-net.virtualvoid.sbt.graph.Plugin.graphSettings
