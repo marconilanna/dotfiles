@@ -46,8 +46,8 @@ cancelable in Global := true
 // Draw a separator between triggered runs (e.g, ~test)
 triggeredMessage := { ws =>
   if (ws.count > 1) {
-    val nl = System.lineSeparator
-    nl * 2 + "#" * 100 + nl * 2
+    val nl = System.lineSeparator * 2
+    nl + "#" * 100 + nl
   } else ""
 }
 
