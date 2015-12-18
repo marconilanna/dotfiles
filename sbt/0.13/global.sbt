@@ -33,31 +33,31 @@ def desugarImpl[T](c: blackbox.Context)(expr: c.Expr[T]): c.Expr[Unit] = {
 def desugar[T](expr: T): Unit = macro desugarImpl[T]
 """
 
-showSuccess := true
-
-showTiming := true
+// Uncomment to enable offline mode for all projects
+// offline := true
 
 // Do not exit sbt when Ctrl-C is used to stop a running app
 cancelable in Global := true
 
-// Uncomment to enable offline mode for all projects
-// offline := true
+showSuccess := true
+
+showTiming := true
 
 // Download and create Eclipse source attachments for library dependencies
 // EclipseKeys.withSource := true
-
-// Draw a separator between triggered runs (e.g, ~test)
-triggeredMessage := { ws =>
-  if (ws.count > 1) {
-    val nl = System.lineSeparator * 2
-    nl + "#" * 100 + nl
-  } else ""
-}
 
 // Enable colors in Scala console (2.11.4)
 initialize ~= { _ =>
   val ansi = System.getProperty("sbt.log.noformat", "false") != "true"
   if (ansi) System.setProperty("scala.color", "true")
+}
+
+// Draw a separator between triggered runs (e.g, ~test)
+triggeredMessage := { ws =>
+  if (ws.count > 1) {
+    val ls = System.lineSeparator * 2
+    ls + "#" * 100 + ls
+  } else ""
 }
 
 shellPrompt := { state =>
