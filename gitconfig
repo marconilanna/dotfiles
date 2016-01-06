@@ -31,3 +31,5 @@
 	tool = opendiff
 [push]
 	default = simple
+[rebase]
+	autostash = true
