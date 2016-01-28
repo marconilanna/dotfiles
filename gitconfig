@@ -29,7 +29,11 @@
 	autocorrect = 1
 [merge]
 	tool = opendiff
+[mergetool]
+	prompt = false
 [push]
 	default = simple
 [rebase]
 	autostash = true
+[stash]
+  showPatch = true
