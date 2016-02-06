@@ -1192,6 +1192,74 @@
 					</dict>
 				</dict>
 			</dict>
+			<key>org.scala-lang:scala-compiler</key>
+			<dict>
+				<key>2.11.7</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-06T02:11:23Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.scala-lang:scala-compiler</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.scala-lang:scala-compiler</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>org.scala-lang:scala-reflect</key>
+			<dict>
+				<key>2.11.7</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-06T02:09:35Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.scala-lang:scala-reflect</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.scala-lang:scala-reflect</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>org.scala-lang.modules:scala-parser-combinators_2.11</key>
+			<dict>
+				<key>1.0.4</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-06T01:59:54Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.scala-lang.modules:scala-parser-combinators_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.scala-lang.modules:scala-parser-combinators_2.11</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>org.scala-lang.modules:scala-xml_2.11</key>
+			<dict>
+				<key>1.0.5</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-06T01:59:04Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.scala-lang.modules:scala-xml_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.scala-lang.modules:scala-xml_2.11</string>
+					</dict>
+				</dict>
+			</dict>
 			<key>org.scalactic:scalactic_2.11</key>
 			<dict>
 				<key>2.2.6</key>
