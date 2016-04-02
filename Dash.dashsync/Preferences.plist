@@ -644,7 +644,7 @@
 		<dict>
 			<key>ch.qos.logback:logback-classic</key>
 			<dict>
-				<key>1.1.3</key>
+				<key>1.1.7</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-14T17:47:25Z</date>
@@ -661,7 +661,7 @@
 			</dict>
 			<key>com.amazonaws:aws-java-sdk-core</key>
 			<dict>
-				<key>1.10.49</key>
+				<key>1.10.66</key>
 				<dict>
 					<key>date</key>
 					<date>2016-01-26T19:20:56Z</date>
@@ -678,7 +678,7 @@
 			</dict>
 			<key>com.amazonaws:aws-java-sdk-kinesis</key>
 			<dict>
-				<key>1.10.49</key>
+				<key>1.10.66</key>
 				<dict>
 					<key>date</key>
 					<date>2016-01-26T19:21:03Z</date>
@@ -690,6 +690,23 @@
 						<string>javadoc</string>
 						<key>uniqueIdentifier</key>
 						<string>com.amazonaws:aws-java-sdk-kinesis</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>com.amazonaws:aws-java-sdk-s3</key>
+			<dict>
+				<key>1.10.66</key>
+				<dict>
+					<key>date</key>
+					<date>2016-03-23T15:33:58Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>com.amazonaws:aws-java-sdk-s3</string>
+						<key>platform</key>
+						<string>javadoc</string>
+						<key>uniqueIdentifier</key>
+						<string>com.amazonaws:aws-java-sdk-s3</string>
 					</dict>
 				</dict>
 			</dict>
@@ -712,7 +729,7 @@
 			</dict>
 			<key>com.ibm.icu:icu4j</key>
 			<dict>
-				<key>56.1</key>
+				<key>57.1</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-08T20:54:04Z</date>
@@ -729,7 +746,7 @@
 			</dict>
 			<key>com.ning:async-http-client</key>
 			<dict>
-				<key>1.9.32</key>
+				<key>1.9.37</key>
 				<dict>
 					<key>date</key>
 					<date>2016-01-12T18:57:53Z</date>
@@ -741,6 +758,23 @@
 						<string>javadoc</string>
 						<key>uniqueIdentifier</key>
 						<string>com.ning:async-http-client</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>com.typesafe.akka:akka-http-core-experimental_2.11</key>
+			<dict>
+				<key>2.0.4</key>
+				<dict>
+					<key>date</key>
+					<date>2016-04-02T15:45:18Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>com.typesafe.akka:akka-http-core-experimental_2.11</string>
+						<key>platform</key>
+						<string>javadoc</string>
+						<key>uniqueIdentifier</key>
+						<string>com.typesafe.akka:akka-http-core-experimental_2.11</string>
 					</dict>
 				</dict>
 			</dict>
@@ -763,7 +797,7 @@
 			</dict>
 			<key>com.univocity:univocity-parsers</key>
 			<dict>
-				<key>1.5.6</key>
+				<key>2.0.1</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-14T17:48:51Z</date>
@@ -848,7 +882,7 @@
 			</dict>
 			<key>joda-time:joda-time</key>
 			<dict>
-				<key>2.9.1</key>
+				<key>2.9.3</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-08T20:52:09Z</date>
@@ -865,7 +899,7 @@
 			</dict>
 			<key>org.antlr:antlr4-runtime</key>
 			<dict>
-				<key>4.5.1-1</key>
+				<key>4.5.3</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-08T21:02:24Z</date>
@@ -933,7 +967,7 @@
 			</dict>
 			<key>org.apache.commons:commons-math3</key>
 			<dict>
-				<key>3.6</key>
+				<key>3.6.1</key>
 				<dict>
 					<key>date</key>
 					<date>2016-01-12T18:58:45Z</date>
@@ -950,7 +984,7 @@
 			</dict>
 			<key>org.apache.httpcomponents:httpclient</key>
 			<dict>
-				<key>4.5.1</key>
+				<key>4.5.2</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-08T20:56:59Z</date>
@@ -962,6 +996,40 @@
 						<string>javadoc</string>
 						<key>uniqueIdentifier</key>
 						<string>org.apache.httpcomponents:httpclient</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>org.flywaydb:flyway-commandline</key>
+			<dict>
+				<key>4.0</key>
+				<dict>
+					<key>date</key>
+					<date>2016-03-23T15:35:33Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.flywaydb:flyway-commandline</string>
+						<key>platform</key>
+						<string>javadoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.flywaydb:flyway-commandline</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>org.flywaydb:flyway-core</key>
+			<dict>
+				<key>4.0</key>
+				<dict>
+					<key>date</key>
+					<date>2016-03-23T15:35:38Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.flywaydb:flyway-core</string>
+						<key>platform</key>
+						<string>javadoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.flywaydb:flyway-core</string>
 					</dict>
 				</dict>
 			</dict>
@@ -984,7 +1052,7 @@
 			</dict>
 			<key>org.joda:joda-money</key>
 			<dict>
-				<key>0.10.0</key>
+				<key>0.11</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-08T20:57:31Z</date>
@@ -1075,7 +1143,7 @@
 		<dict>
 			<key>com.github.nscala-time:nscala-time_2.11</key>
 			<dict>
-				<key>2.6.0</key>
+				<key>2.12.0</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-08T20:53:10Z</date>
@@ -1092,7 +1160,7 @@
 			</dict>
 			<key>com.github.pathikrit:better-files_2.11</key>
 			<dict>
-				<key>2.14.0</key>
+				<key>2.15.0</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-14T17:53:07Z</date>
@@ -1121,6 +1189,57 @@
 						<string>scaladoc</string>
 						<key>uniqueIdentifier</key>
 						<string>com.github.t3hnar:scala-bcrypt_2.11</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>com.softwaremill.macwire:macros_2.11</key>
+			<dict>
+				<key>2.2.2</key>
+				<dict>
+					<key>date</key>
+					<date>2016-03-24T14:48:43Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>com.softwaremill.macwire:macros_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>com.softwaremill.macwire:macros_2.11</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>com.softwaremill.macwire:proxy_2.11</key>
+			<dict>
+				<key>2.2.2</key>
+				<dict>
+					<key>date</key>
+					<date>2016-03-24T14:48:39Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>com.softwaremill.macwire:proxy_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>com.softwaremill.macwire:proxy_2.11</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>com.softwaremill.macwire:util_2.11</key>
+			<dict>
+				<key>2.2.2</key>
+				<dict>
+					<key>date</key>
+					<date>2016-03-24T14:48:47Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>com.softwaremill.macwire:util_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>com.softwaremill.macwire:util_2.11</string>
 					</dict>
 				</dict>
 			</dict>
@@ -1175,6 +1294,74 @@
 					</dict>
 				</dict>
 			</dict>
+			<key>io.getquill:quill-async_2.11</key>
+			<dict>
+				<key>0.5.0</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-03T18:07:05Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>io.getquill:quill-async_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>io.getquill:quill-async_2.11</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>io.getquill:quill-core_2.11</key>
+			<dict>
+				<key>0.5.0</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-03T18:06:43Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>io.getquill:quill-core_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>io.getquill:quill-core_2.11</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>io.getquill:quill-jdbc_2.11</key>
+			<dict>
+				<key>0.5.0</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-03T18:06:58Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>io.getquill:quill-jdbc_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>io.getquill:quill-jdbc_2.11</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>io.getquill:quill-sql_2.11</key>
+			<dict>
+				<key>0.5.0</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-03T18:06:51Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>io.getquill:quill-sql_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>io.getquill:quill-sql_2.11</string>
+					</dict>
+				</dict>
+			</dict>
 			<key>net.databinder.dispatch:dispatch-core_2.11</key>
 			<dict>
 				<key>0.11.3</key>
@@ -1189,40 +1376,6 @@
 						<string>scaladoc</string>
 						<key>uniqueIdentifier</key>
 						<string>net.databinder.dispatch:dispatch-core_2.11</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>org.scala-lang:scala-compiler</key>
-			<dict>
-				<key>2.11.7</key>
-				<dict>
-					<key>date</key>
-					<date>2016-02-06T02:11:23Z</date>
-					<key>entry</key>
-					<dict>
-						<key>name</key>
-						<string>org.scala-lang:scala-compiler</string>
-						<key>platform</key>
-						<string>scaladoc</string>
-						<key>uniqueIdentifier</key>
-						<string>org.scala-lang:scala-compiler</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>org.scala-lang:scala-reflect</key>
-			<dict>
-				<key>2.11.7</key>
-				<dict>
-					<key>date</key>
-					<date>2016-02-06T02:09:35Z</date>
-					<key>entry</key>
-					<dict>
-						<key>name</key>
-						<string>org.scala-lang:scala-reflect</string>
-						<key>platform</key>
-						<string>scaladoc</string>
-						<key>uniqueIdentifier</key>
-						<string>org.scala-lang:scala-reflect</string>
 					</dict>
 				</dict>
 			</dict>
@@ -1243,6 +1396,23 @@
 					</dict>
 				</dict>
 			</dict>
+			<key>org.scala-lang.modules:scala-swing_2.11</key>
+			<dict>
+				<key>1.0.2</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-06T02:52:06Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.scala-lang.modules:scala-swing_2.11</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.scala-lang.modules:scala-swing_2.11</string>
+					</dict>
+				</dict>
+			</dict>
 			<key>org.scala-lang.modules:scala-xml_2.11</key>
 			<dict>
 				<key>1.0.5</key>
@@ -1257,6 +1427,57 @@
 						<string>scaladoc</string>
 						<key>uniqueIdentifier</key>
 						<string>org.scala-lang.modules:scala-xml_2.11</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>org.scala-lang:scala-compiler</key>
+			<dict>
+				<key>2.11.8</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-06T02:11:23Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.scala-lang:scala-compiler</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.scala-lang:scala-compiler</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>org.scala-lang:scala-reflect</key>
+			<dict>
+				<key>2.11.8</key>
+				<dict>
+					<key>date</key>
+					<date>2016-02-06T02:09:35Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.scala-lang:scala-reflect</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.scala-lang:scala-reflect</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>org.scala-lang:scalap</key>
+			<dict>
+				<key>2.11.8</key>
+				<dict>
+					<key>date</key>
+					<date>2016-03-09T15:15:11Z</date>
+					<key>entry</key>
+					<dict>
+						<key>name</key>
+						<string>org.scala-lang:scalap</string>
+						<key>platform</key>
+						<string>scaladoc</string>
+						<key>uniqueIdentifier</key>
+						<string>org.scala-lang:scalap</string>
 					</dict>
 				</dict>
 			</dict>
@@ -1324,7 +1545,7 @@
 					<key>date</key>
 					<date>2015-10-06T20:59:39Z</date>
 				</dict>
-				<key>2.4.1</key>
+				<key>2.4.2</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-03T00:50:52Z</date>
@@ -1356,7 +1577,7 @@
 			</dict>
 			<key>http://kapeli.com/feeds/Lo-Dash.xml</key>
 			<dict>
-				<key>4.0.1</key>
+				<key>4.7.0</key>
 				<dict>
 					<key>date</key>
 					<date>2016-01-26T19:17:47Z</date>
@@ -1380,10 +1601,26 @@
 			</dict>
 			<key>http://kapeli.com/feeds/Play_Scala.xml</key>
 			<dict>
-				<key>2.4.4</key>
+				<key>2.5.1</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-03T00:56:27Z</date>
+				</dict>
+			</dict>
+			<key>http://kapeli.com/feeds/PostgreSQL.xml</key>
+			<dict>
+				<key>9.5.2</key>
+				<dict>
+					<key>date</key>
+					<date>2016-04-02T15:43:06Z</date>
+				</dict>
+			</dict>
+			<key>http://kapeli.com/feeds/Python_2.xml</key>
+			<dict>
+				<key>2.7.11</key>
+				<dict>
+					<key>date</key>
+					<date>2015-12-25T00:33:26Z</date>
 				</dict>
 			</dict>
 			<key>http://kapeli.com/feeds/Python_3.xml</key>
@@ -1396,7 +1633,7 @@
 			</dict>
 			<key>http://kapeli.com/feeds/Scala.xml</key>
 			<dict>
-				<key>2.11.7</key>
+				<key>2.11.8</key>
 				<dict>
 					<key>date</key>
 					<date>2015-10-06T21:03:52Z</date>
@@ -1404,7 +1641,7 @@
 			</dict>
 			<key>http://kapeli.com/feeds/Swift.xml</key>
 			<dict>
-				<key>2.1</key>
+				<key>2.2</key>
 				<dict>
 					<key>date</key>
 					<date>2015-12-03T00:56:56Z</date>
@@ -1428,7 +1665,7 @@
 			</dict>
 			<key>http://kapeli.com/feeds/jQuery.xml</key>
 			<dict>
-				<key>1.12.0 or 2.2.0</key>
+				<key>1.12.2 or 2.2.2</key>
 				<dict>
 					<key>date</key>
 					<date>2016-01-12T19:00:41Z</date>
