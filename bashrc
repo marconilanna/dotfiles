@@ -64,8 +64,9 @@ PS1='\h:\w\$ '
 
 HISTIGNORE='bg:c:cd:cd ..:clear:exit:fg:jobs:ls:ps:pwd:w'
 HISTCONTROL='ignorespace:erasedups'
-HISTFILESIZE=100000
-HISTSIZE=1000
+HISTFILESIZE=1000000
+HISTSIZE=5000
+HISTTIMEFORMAT="%y-%m-%d %T "
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -118,7 +119,9 @@ alias push-branch='git push -u origin'
 alias rebase='     git rebase -i'
 alias revert='     git revert'
 alias rlog='       git reflog'
-alias show='       git stash show -p'
+alias show='       git show'
+alias sshow='      git stash show -p'
+alias slog='       git shortlog -sn'
 alias staged='     git diff --staged'
 alias stash='      git stash save'
 alias status='     git status'

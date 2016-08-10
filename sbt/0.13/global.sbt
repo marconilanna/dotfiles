@@ -6,7 +6,7 @@ import
   scala.annotation.{switch, tailrec},
   scala.beans.{BeanProperty, BooleanBeanProperty},
   scala.collection.JavaConverters._,
-  scala.collection.mutable,
+  scala.collection.{breakOut, mutable},
   scala.concurrent.{Await, ExecutionContext, Future},
   scala.concurrent.ExecutionContext.Implicits.global,
   scala.concurrent.duration._,
