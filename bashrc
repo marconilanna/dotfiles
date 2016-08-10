@@ -17,7 +17,7 @@ alias scala="scala $SCALA_OPTS -language:_ -nowarn -i ~/.repl.scala"
 export SBT_OPTS=$JAVA_OPTS
 
 export BLOCKSIZE='K'
-export LESS='--ignore-case'
+export LESS='--ignore-case --RAW-CONTROL-CHARS'
 export PAGER='less'
 LESSHISTFILE="-"
 
@@ -105,7 +105,7 @@ alias difftool='   git difftool'
 alias fetch='      git fetch'
 alias ggrep='      git grep --break --heading --line-number'
 alias ignored='    git status --ignored'
-alias lastcommit=' git diff HEAD~1'
+alias lastcommit=' git diff HEAD^..HEAD'
 alias list='       git stash list'
 alias log='        git log --abbrev-commit --graph --no-merges --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset %Cgreen%cr%Creset - %s%C(yellow)%d%Creset"'
 alias master='     git checkout master'
@@ -122,5 +122,6 @@ alias show='       git stash show -p'
 alias staged='     git diff --staged'
 alias stash='      git stash save'
 alias status='     git status'
+alias statuss='    git status -sb'
 alias uncommit='   git reset --soft HEAD~1'
 alias unstage='    git reset HEAD'
