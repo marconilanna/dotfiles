@@ -1,39 +1,40 @@
 # ~/.gitconfig
 
 [user]
-	name = ...
-	email = ...
+  name = ...
+  email = ...
 [github]
-	user = ...
-	token = ...
+  user = ...
+  token = ...
 [core]
-	excludesfile = ~/.gitignore_global
-	autocrlf = input
-	whitespace = space-before-tab,trailing-space
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+  whitespace = space-before-tab,trailing-space
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [color]
-	ui = true
+  ui = true
 [color "status"]
-	added = green
-	changed = red
-	untracked = cyan
+  added = green
+  changed = red
+  untracked = cyan
 [diff]
-	tool = opendiff
+  algorithm = patience
+  tool = opendiff
 [difftool]
-	prompt = false
+  prompt = false
 [grep]
-	extendRegexp = true
-	lineNumber = true
+  extendRegexp = true
+  lineNumber = true
 [help]
-	autocorrect = 1
+  autocorrect = 1
 [merge]
-	tool = opendiff
+  tool = opendiff
 [mergetool]
-	prompt = false
+  prompt = false
 [push]
-	default = simple
+  default = simple
 [rebase]
-	autostash = true
+  autostash = true
 [stash]
   showPatch = true
