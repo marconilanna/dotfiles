@@ -17,6 +17,7 @@ import
   scala.util.control.NonFatal,
   java.io._,
   java.net._,
+  java.time.{Duration => jDuration, _},
   System.{currentTimeMillis => now},
   System.nanoTime
 
@@ -46,7 +47,7 @@ showTiming := true
 // Download and create Eclipse source attachments for library dependencies
 // EclipseKeys.withSource := true
 
-// Enable colors in Scala console (2.11.4)
+// Enable colors in Scala console (2.11.4+)
 initialize ~= { _ =>
   val ansi = System.getProperty("sbt.log.noformat", "false") != "true"
   if (ansi) System.setProperty("scala.color", "true")
@@ -62,7 +63,5 @@ triggeredMessage := { ws =>
 
 shellPrompt := { state =>
   import scala.Console.{BLUE, BOLD, RESET}
-  val p = Project.extract(state)
-  val name = p.getOpt(sbt.Keys.name) getOrElse p.currentProject.id
-  s"$BLUE$BOLD$name$RESET $BOLD\u25b6$RESET "
+  s"$BLUE$BOLD${name.value}$RESET $BOLD\u25b6$RESET "
 }
