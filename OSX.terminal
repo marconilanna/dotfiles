@@ -165,6 +165,8 @@
 	<false/>
 	<key>BlinkText</key>
 	<false/>
+	<key>BookmarkRestorations</key>
+	<false/>
 	<key>CursorBlink</key>
 	<false/>
 	<key>CursorColor</key>
@@ -214,6 +216,8 @@
 	</data>
 	<key>ShouldLimitScrollback</key>
 	<integer>0</integer>
+	<key>ShouldRestoreContent</key>
+	<false/>
 	<key>ShowActiveProcessInTitle</key>
 	<false/>
 	<key>ShowCommandKeyInTitle</key>
@@ -224,6 +228,8 @@
 	<false/>
 	<key>ShowTTYNameInTitle</key>
 	<false/>
+	<key>ShowTerminalInDockIcon</key>
+	<true/>
 	<key>ShowWindowSettingsNameInTitle</key>
 	<false/>
 	<key>TextBoldColor</key>
