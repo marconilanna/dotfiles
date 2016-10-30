@@ -9,10 +9,11 @@ jdk 8
 export JAVA_OPTS='-server -Xss10m -Xms50m -Xmx1500m -XX:ReservedCodeCacheSize=100m'
 export CLASSPATH='.'
 
-SCALA_OPTS='-encoding UTF-8 -target:jvm-1.8 -Dscala.color -Xexperimental -Xfuture -Ybackend:GenBCode'
-SCALAC_OPTS='-deprecation -feature -g:vars -optimise -unchecked -Xdev -Xfatal-warnings -Xlint:_ -Yclosure-elim -Yconst-opt -Ydead-code -Yinline -Yinline-handlers -Yinline-warnings -Yno-adapted-args -Yopt:_ -Ywarn-dead-code -Ywarn-unused -Ywarn-unused-import -Ywarn-value-discard'
+SCALA_OPTS='-encoding UTF-8 -target:jvm-1.8 -Xexperimental -Xfuture'
+SCALA_REPL_OPTS='-language:_ -nowarn -Dscala.color -i ~/.repl.scala'
+SCALAC_OPTS='-deprecation -feature -g:vars -opt:_ -unchecked -Xdev -Xfatal-warnings -Xlint:_ -Xstrict-inference -Yno-adapted-args -Ywarn-dead-code -Ywarn-numeric-widen -Ywarn-unused -Ywarn-unused-import -Ywarn-value-discard'
+alias scala="scala $SCALA_OPTS $SCALA_REPL_OPTS"
 alias scalac="scalac $SCALA_OPTS $SCALAC_OPTS"
-alias scala="scala $SCALA_OPTS -language:_ -nowarn -i ~/.repl.scala"
 
 export SBT_OPTS=$JAVA_OPTS
 
