@@ -9,7 +9,6 @@ set bell-style visible
 set colored-stats on
 set completion-ignore-case on
 set completion-prefix-display-length 2
-set expand-tilde on
 set history-size -1
 set revert-all-at-newline on
 set show-all-if-ambiguous on
