@@ -1,6 +1,7 @@
 // ~/.sbt/0.13/global.sbt
 
 // Statements executed when starting the Scala REPL (sbt's `console` task)
+
 initialCommands := """
 import
   scala.annotation.{switch, tailrec},
@@ -17,6 +18,7 @@ import
   scala.util.control.NonFatal,
   java.io._,
   java.net._,
+  java.nio.file._,
   java.time.{Duration => jDuration, _},
   System.{currentTimeMillis => now},
   System.nanoTime
@@ -34,15 +36,15 @@ def desugarImpl[T](c: blackbox.Context)(expr: c.Expr[T]): c.Expr[Unit] = {
 def desugar[T](expr: T): Unit = macro desugarImpl[T]
 """
 
-// Uncomment to enable offline mode for all projects
-// offline := true
-
 // Do not exit sbt when Ctrl-C is used to stop a running app
 cancelable in Global := true
 
 showSuccess := true
 
 showTiming := true
+
+// Uncomment to enable offline mode
+// offline := true
 
 // Download and create Eclipse source attachments for library dependencies
 // EclipseKeys.withSource := true
