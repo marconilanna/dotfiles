@@ -1,8 +1,8 @@
 [
-	{ "keys": ["super+alt+s"], "command": "prompt_save_as" },
-	{ "keys": ["super+shift+s"], "command": "save_all" },
-	{ "keys": ["alt+up"], "command": "swap_line_up" },
-	{ "keys": ["alt+down"], "command": "swap_line_down" },
-	{ "keys": ["super+alt+down"], "command": "duplicate_line" },
-	{ "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} }
+  { "keys": ["super+alt+s"], "command": "prompt_save_as" },
+  { "keys": ["super+shift+s"], "command": "save_all" },
+  { "keys": ["alt+up"], "command": "swap_line_up" },
+  { "keys": ["alt+down"], "command": "swap_line_down" },
+  { "keys": ["super+alt+down"], "command": "duplicate_line" },
+  { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} }
 ]
