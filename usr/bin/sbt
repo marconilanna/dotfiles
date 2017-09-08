@@ -6,7 +6,7 @@ if test "$1" = "debug"; then
   shift
 fi
 
-JAVA_OPTS="-server -Xss16m -Xms512m -Xmx4096m -XX:+CMSClassUnloadingEnabled"
+JAVA_OPTS="-server -Xss1m -Xms100m -Xmx1500m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -XX:NewRatio=8"
 # -XX:ReservedCodeCacheSize=256m
 # -XX:MaxMetaspaceSize=512m
 

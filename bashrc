@@ -2,22 +2,24 @@
 
 export PATH="$HOME/usr/bin:$PATH"
 
-jdk() { export JAVA_HOME=$(/usr/libexec/java_home -v 1.$1); }
+jdk() { export JAVA_HOME=$(/usr/libexec/java_home -v 1.$1); java -version; }
 
-jdk 8
+jdk 8 2> /dev/null
 
 export JAVA_OPTS='-server -Xss10m -Xms50m -Xmx1500m -XX:ReservedCodeCacheSize=100m'
 export CLASSPATH='.'
 
 SCALA_OPTS='-encoding UTF-8 -target:jvm-1.8 -Xexperimental -Xfuture'
-SCALA_REPL_OPTS='-language:_ -nowarn -Dscala.color -i ~/.repl.scala'
-SCALAC_OPTS='-deprecation -feature -g:vars -opt:_ -unchecked -Xdev -Xfatal-warnings -Xlint:_ -Xstrict-inference -Yno-adapted-args -Ywarn-dead-code -Ywarn-numeric-widen -Ywarn-unused -Ywarn-unused-import -Ywarn-value-discard'
+SCALAC_OPTS='-deprecation -feature -g:vars -opt:l:inline -opt-inline-from:** -unchecked -Xdev -Xfatal-warnings -Xlint:_,-missing-interpolator -Xstrict-inference -Yno-adapted-args -Ywarn-dead-code -Ywarn-extra-implicit -Ywarn-numeric-widen -Ywarn-unused:_ -Ywarn-value-discard'
+SCALA_REPL_OPTS='-language:_ -nowarn -i ~/.repl.scala'
+
 alias scala="scala $SCALA_OPTS $SCALA_REPL_OPTS"
 alias scalac="scalac $SCALA_OPTS $SCALAC_OPTS"
 
 export SBT_OPTS=$JAVA_OPTS
 
 export BLOCKSIZE='K'
+export LC_COLLATE='C'
 export LESS='--ignore-case --RAW-CONTROL-CHARS'
 export PAGER='less'
 LESSHISTFILE="-"
@@ -33,9 +35,11 @@ alias rm='rm -i'
 alias md='mkdir -pv'
 alias mkdir='mkdir -pv'
 
+alias rmdsstore='find . -name .DS_Store -delete'
+
 alias df='df -H'
+alias du.='du -sc .'
 alias dusc='du -sc * | sort -n'
-alias du.='du -sc . | sort -n'
 
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
@@ -127,5 +131,6 @@ alias staged='     git diff --staged'
 alias stash='      git stash save'
 alias status='     git status'
 alias statuss='    git status -sb'
+      tag() {      git tag -a $1 -m $1; }
 alias uncommit='   git reset --soft HEAD~1'
 alias unstage='    git reset HEAD'

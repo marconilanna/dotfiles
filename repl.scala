@@ -1,22 +1,28 @@
 import
-  scala.annotation.{switch, tailrec},
-  scala.beans.{BeanProperty, BooleanBeanProperty},
-  scala.collection.JavaConverters._,
-  scala.collection.{breakOut, mutable},
-  scala.concurrent.{Await, ExecutionContext, Future},
-  scala.concurrent.ExecutionContext.Implicits.global,
-  scala.concurrent.duration._,
-  scala.language.experimental.macros,
-  scala.math._,
-  scala.reflect.macros.blackbox,
-  scala.util.{Failure, Random, Success, Try},
-  scala.util.control.NonFatal,
-  java.io._,
-  java.net._,
-  java.nio.file._,
-  java.time.{Duration => jDuration, _},
-  System.{currentTimeMillis => now},
-  System.nanoTime
+  scala.annotation.{switch, tailrec}
+, scala.beans.{BeanProperty, BooleanBeanProperty}
+, scala.collection.JavaConverters._
+, scala.collection.{breakOut, mutable}
+, scala.concurrent.{Await, ExecutionContext, Future}
+, scala.concurrent.ExecutionContext.Implicits.global
+, scala.concurrent.duration._
+, scala.language.experimental.macros
+, scala.math._
+, scala.reflect.macros.blackbox
+, scala.util.{Failure, Random, Success, Try}
+, scala.util.control.NonFatal
+, java.io._
+, java.net._
+, java.nio.file._
+, java.time.{Duration => jDuration, _}
+, System.{currentTimeMillis => now, nanoTime}
+
+def time[T](f: => T): T = {
+  val start = now
+  try f finally {
+    println("Elapsed: " + (now - start)/1000.0 + " s")
+  }
+}
 
 def desugarImpl[T](c: blackbox.Context)(expr: c.Expr[T]): c.Expr[Unit] = {
   import c.universe._, scala.io.AnsiColor.{BOLD, GREEN, RESET}

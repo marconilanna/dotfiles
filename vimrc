@@ -1,4 +1,4 @@
-filetype indent on
+filetype plugin indent on
 
 set autoindent
 
@@ -30,4 +30,4 @@ set visualbell
 
 set wildmenu                                " visual autocomplete
 
-syntax enable
+syntax on
