@@ -19,6 +19,8 @@ import
 , java.net._
 , java.nio.file._
 , java.time.{Duration => jDuration, _}
+, java.util.{Locale, UUID}
+, java.util.regex.{Matcher, Pattern}
 , System.{currentTimeMillis => now, nanoTime}
 
 def time[T](f: => T): T = {
@@ -53,6 +55,12 @@ logBuffered in Test := false
 showSuccess := true
 showTiming := true
 
+// Clean locally cached project artifacts
+publishLocal := publishLocal
+  .dependsOn(cleanCache.toTask(""))
+  .dependsOn(cleanLocal.toTask(""))
+  .value
+
 // ScalaTest configuration
 testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest
   // F: show full stack traces
@@ -63,9 +71,6 @@ testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest
   //    replace with G (or T) to show reminders with full (or short) stack traces
   // K: exclude canceled tests from reminder
 , "-oDI"
-  // enforce chosen testing styles
-, "-y", "org.scalatest.FreeSpec"
-, "-y", "org.scalatest.AsyncFreeSpec"
   // Periodic notification of slowpokes (tests that have been running longer than 30s)
 , "-W", "30", "30"
 )
@@ -76,16 +81,8 @@ initialize ~= { _ =>
   if (ansi) System.setProperty("scala.color", "true")
 }
 
-// Draw a separator between triggered runs (e.g, ~test)
-triggeredMessage := { ws =>
-  if (ws.count > 1) {
-    val ls = System.lineSeparator * 2
-    ls + "#" * 80 + ls
-  } else ""
-}
-
-// Alternative: clear the console between triggered runs
-//triggeredMessage := Watched.clearWhenTriggered
+// Clear the console between triggered runs (e.g, ~test)
+triggeredMessage := Watched.clearWhenTriggered
 
 shellPrompt := { state =>
   import scala.Console.{BLUE, BOLD, RESET}
