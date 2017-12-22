@@ -11,7 +11,7 @@ export CLASSPATH='.'
 
 SCALA_OPTS='-encoding UTF-8 -target:jvm-1.8 -Xexperimental -Xfuture'
 SCALAC_OPTS='-deprecation -feature -g:vars -opt:l:inline -opt-inline-from:** -unchecked -Xdev -Xfatal-warnings -Xlint:_,-missing-interpolator -Xstrict-inference -Yno-adapted-args -Ywarn-dead-code -Ywarn-extra-implicit -Ywarn-numeric-widen -Ywarn-unused:_ -Ywarn-value-discard'
-SCALA_REPL_OPTS='-language:_ -nowarn -i ~/.repl.scala'
+SCALA_REPL_OPTS='-explaintypes -language:_ -nowarn -i ~/.repl.scala'
 
 alias scala="scala $SCALA_OPTS $SCALA_REPL_OPTS"
 alias scalac="scalac $SCALA_OPTS $SCALAC_OPTS"

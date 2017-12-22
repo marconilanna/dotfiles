@@ -1,4 +1,4 @@
-// ~/.sbt/0.13/plugins/plugins.sbt
+// ~/.sbt/1.0/plugins/plugins.sbt
 
 // Adds a `dependencyUpdates` task to check Maven repositories for dependency updates
 // http://github.com/rtimush/sbt-updates
@@ -17,11 +17,11 @@ addSbtPlugin("com.orrsella" % "sbt-stats" % "1.0.7")
 addSbtPlugin("org.duhemm" % "sbt-errors-summary" % "0.6.0")
 
 // http://github.com/sbt/sbt-dirty-money
-addSbtPlugin("com.eed3si9n" % "sbt-dirty-money" % "0.1.0")
+//addSbtPlugin("com.eed3si9n" % "sbt-dirty-money" % "0.1.0") // no sbt 1.x support
 
 // http://github.com/coursier/coursier
-addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC12")
+addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0")
 
 // Creates Eclipse project definitions (.classpath, .project, .settings/)
 // http://github.com/typesafehub/sbteclipse
-//addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.2.3")
+//addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.2.4")

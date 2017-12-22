@@ -1,7 +1,7 @@
-// ~/.sbt/0.13/global.sbt
+// ~/.sbt/1.0/global.sbt
 
 // Statements executed when starting the Scala REPL (sbt's `console` task)
-initialCommands := """
+initialCommands += """
 import
   scala.annotation.{switch, tailrec}
 , scala.beans.{BeanProperty, BooleanBeanProperty}
@@ -12,7 +12,10 @@ import
 , scala.concurrent.duration._
 , scala.language.experimental.macros
 , scala.math._
-, scala.reflect.macros.blackbox
+, scala.reflect.macros.{blackbox, whitebox}
+, scala.reflect.runtime.{currentMirror => mirror}
+, scala.reflect.runtime.universe._
+, scala.tools.reflect.ToolBox
 , scala.util.{Failure, Random, Success, Try}
 , scala.util.control.NonFatal
 , java.io._
@@ -23,6 +26,10 @@ import
 , java.util.regex.{Matcher, Pattern}
 , System.{currentTimeMillis => now, nanoTime}
 
+val toolbox = mirror.mkToolBox()
+
+import toolbox.{PATTERNmode, TERMmode, TYPEmode}
+
 def time[T](f: => T): T = {
   val start = now
   try f finally {
@@ -30,21 +37,37 @@ def time[T](f: => T): T = {
   }
 }
 
-def desugarImpl[T](c: blackbox.Context)(expr: c.Expr[T]): c.Expr[Unit] = {
+def desugar[T](expr: => T): Unit = macro desugarImpl[T]
+
+def desugarImpl[T](c: blackbox.Context)(expr: c.Expr[T]) = {
   import c.universe._, scala.io.AnsiColor.{BOLD, GREEN, RESET}
 
-  val exp = show(expr.tree)
+  val exp = showCode(expr.tree)
   val typ = expr.actualType.toString takeWhile '('.!=
 
   println(s"$exp: $BOLD$GREEN$typ$RESET")
-  reify { (): Unit }
-}
 
-def desugar[T](expr: T): Unit = macro desugarImpl[T]
+  q"()"
+}
 """
+
+// Statements executed before the Scala REPL exits
+//cleanupCommands := ""
+
+// Improved dependency management
+updateOptions := updateOptions.value.withCachedResolution(true)
+
+// Clean locally cached project artifacts
+// no sbt 1.x support
+//publishLocal := publishLocal
+//  .dependsOn(cleanCache.toTask(""))
+//  .dependsOn(cleanLocal.toTask(""))
+//  .value
+isSnapshot in ThisBuild := true // workaround for above
 
 // Share history among all projects instead of using a different history for each project
 historyPath := Option(target.in(LocalRootProject).value / ".history")
+cleanKeepFiles += target.in(LocalRootProject).value / ".history"
 
 // Do not exit sbt when Ctrl-C is used to stop a running app
 cancelable in Global := true
@@ -54,12 +77,6 @@ logBuffered in Test := false
 
 showSuccess := true
 showTiming := true
-
-// Clean locally cached project artifacts
-publishLocal := publishLocal
-  .dependsOn(cleanCache.toTask(""))
-  .dependsOn(cleanLocal.toTask(""))
-  .value
 
 // ScalaTest configuration
 testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest

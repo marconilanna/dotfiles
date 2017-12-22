@@ -8,7 +8,10 @@ import
 , scala.concurrent.duration._
 , scala.language.experimental.macros
 , scala.math._
-, scala.reflect.macros.blackbox
+, scala.reflect.macros.{blackbox, whitebox}
+, scala.reflect.runtime.{currentMirror => mirror}
+, scala.reflect.runtime.universe._
+, scala.tools.reflect.ToolBox
 , scala.util.{Failure, Random, Success, Try}
 , scala.util.control.NonFatal
 , java.io._
@@ -19,6 +22,10 @@ import
 , java.util.regex.{Matcher, Pattern}
 , System.{currentTimeMillis => now, nanoTime}
 
+val toolbox = mirror.mkToolBox()
+
+import toolbox.{PATTERNmode, TERMmode, TYPEmode}
+
 def time[T](f: => T): T = {
   val start = now
   try f finally {
@@ -26,14 +33,15 @@ def time[T](f: => T): T = {
   }
 }
 
-def desugarImpl[T](c: blackbox.Context)(expr: c.Expr[T]): c.Expr[Unit] = {
+def desugar[T](expr: => T): Unit = macro desugarImpl[T]
+
+def desugarImpl[T](c: blackbox.Context)(expr: c.Expr[T]) = {
   import c.universe._, scala.io.AnsiColor.{BOLD, GREEN, RESET}
 
-  val exp = show(expr.tree)
+  val exp = showCode(expr.tree)
   val typ = expr.actualType.toString takeWhile '('.!=
 
   println(s"$exp: $BOLD$GREEN$typ$RESET")
-  reify { (): Unit }
-}
 
-def desugar[T](expr: T): Unit = macro desugarImpl[T]
+  q"()"
+}
