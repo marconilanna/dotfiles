@@ -58,16 +58,13 @@ def desugarImpl[T](c: blackbox.Context)(expr: c.Expr[T]) = {
 updateOptions := updateOptions.value.withCachedResolution(true)
 
 // Clean locally cached project artifacts
-// no sbt 1.x support
-//publishLocal := publishLocal
-//  .dependsOn(cleanCache.toTask(""))
-//  .dependsOn(cleanLocal.toTask(""))
-//  .value
-isSnapshot in ThisBuild := true // workaround for above
+publishLocal := publishLocal
+  .dependsOn(cleanCache.toTask(""))
+  .dependsOn(cleanLocal.toTask(""))
+  .value
 
 // Share history among all projects instead of using a different history for each project
 historyPath := Option(target.in(LocalRootProject).value / ".history")
-cleanKeepFiles += target.in(LocalRootProject).value / ".history"
 
 // Do not exit sbt when Ctrl-C is used to stop a running app
 cancelable in Global := true

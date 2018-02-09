@@ -75,7 +75,6 @@ publishLocal := publishLocal
 
 // Share history among all projects instead of using a different history for each project
 historyPath := Option(target.in(LocalRootProject).value / ".history")
-cleanKeepFiles += target.in(LocalRootProject).value / ".history"
 
 // Do not exit sbt when Ctrl-C is used to stop a running app
 cancelable in Global := true
