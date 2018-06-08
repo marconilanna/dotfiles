@@ -105,8 +105,13 @@ initialize ~= { _ =>
   if (ansi) System.setProperty("scala.color", "true")
 }
 
-// Clear the console between triggered runs (e.g, ~test)
-triggeredMessage := Watched.clearWhenTriggered
+// Draw a separator between triggered runs (e.g, ~test)
+triggeredMessage := { ws =>
+  if (ws.count > 1) {
+    val nl = System.lineSeparator * 2
+    nl + "#" * 72 + nl
+  } else ""
+}
 
 shellPrompt := { state =>
   import scala.Console.{BLUE, BOLD, RESET}
