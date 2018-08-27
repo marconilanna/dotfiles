@@ -10,7 +10,7 @@ export JAVA_OPTS='-server -Xss10m -Xms50m -Xmx1500m -XX:ReservedCodeCacheSize=10
 export CLASSPATH='.'
 
 SCALA_OPTS='-encoding UTF-8 -target:jvm-1.8 -Xexperimental -Xfuture'
-SCALAC_OPTS='-deprecation -feature -g:vars -opt:l:inline -opt-inline-from:** -unchecked -Xdev -Xfatal-warnings -Xlint:_,-missing-interpolator -Xstrict-inference -Yno-adapted-args -Ywarn-dead-code -Ywarn-extra-implicit -Ywarn-numeric-widen -Ywarn-unused:_ -Ywarn-value-discard'
+SCALAC_OPTS='-deprecation -feature -g:vars -opt:l:inline -opt-inline-from:** -unchecked -Xdev -Xfatal-warnings -Xlint:_,-missing-interpolator -Xstrict-inference -Yno-adapted-args -Ywarn-dead-code -Ywarn-extra-implicit -Ywarn-numeric-widen -Ywarn-self-implicit -Ywarn-unused:_ -Ywarn-value-discard'
 SCALA_REPL_OPTS='-explaintypes -language:_ -nowarn -i ~/.repl.scala'
 
 alias scala="scala $SCALA_OPTS $SCALA_REPL_OPTS"
@@ -22,7 +22,7 @@ export BLOCKSIZE='K'
 export LC_COLLATE='C'
 export LESS='--ignore-case -F -X --RAW-CONTROL-CHARS'
 export PAGER='less'
-LESSHISTFILE="-"
+LESSHISTFILE='-'
 
 alias ls='ls -AFGl'
 alias dir='\ls -AFG'
@@ -64,6 +64,8 @@ alias .5='cd ../../../..'
 
 alias gvim='gvim -reverse'
 
+alias cloc='cloc . --exclude-dir=.idea,target'
+
 alias header='curl -I'
 
 PS1='\h:\w\$ '
@@ -72,7 +74,7 @@ HISTIGNORE='bg:c:cd:cd ..:clear:exit:fg:jobs:ls:ps:pwd:w'
 HISTCONTROL='ignorespace:erasedups'
 HISTFILESIZE=1000000
 HISTSIZE=5000
-HISTTIMEFORMAT="%y-%m-%d %T "
+HISTTIMEFORMAT='%y-%m-%d %T '
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -121,7 +123,7 @@ alias merg='       git merge'
 alias mm='         git merge master'
 alias pull='       git pull --rebase'
 alias push='       git push'
-alias pushbranch=' git push -u origin'
+alias pushbranch=' git push -u origin HEAD'
 alias rebase='     git rebase -i'
 alias reflog='     git reflog'
 alias revert='     git revert'
@@ -131,10 +133,11 @@ alias sdrop='      git stash drop'
 alias slist='      git stash list'
 alias spop='       git stash pop'
 alias ssave='      git stash save'
-alias sshow='      git stash show -p --color-moved'
+alias sshow='      git stash show --color-moved'
 alias staged='     git diff --staged --color-moved'
 alias status='     git status'
 alias statuss='    git status -sb'
       tag() {      git tag -a $1 -m $1; }
 alias uncommit='   git reset --soft HEAD~1'
+alias unpushed='   git log --branches --not --remotes --oneline'
 alias unstage='    git reset HEAD'

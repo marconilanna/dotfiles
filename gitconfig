@@ -37,5 +37,6 @@
   default = simple
 [rebase]
   autostash = true
+  missingCommitsCheck = error
 [stash]
   showPatch = true
