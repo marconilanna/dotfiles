@@ -1,0 +1,131 @@
+\เริ่มต้น{รหัส}
+
+เปิดการนำเข้า Data.Nat
+
+เปิดการนำเข้า Relation.Binary.PropositionalEquality
+
+เปิดการนำเข้า Data.Bool
+
+เปิดนำเข้า Data.Maybe
+
+โมดูล functionalarray โดยที่
+
+-- เรายังเพิ่มแนวคิดเรื่องนกและเมียร์เทนได้ที่นี่ แต่มันทำให้การใช้งานยากขึ้น
+
+  data Repr : ℕ → Set where
+
+    z : ตัวแทน 0
+
+    2*_ : ∀ {n : ℕ} → Repr n → Repr (n * 2)
+
+    2*_+1 : ∀ {n : ℕ} → Repr n → Repr (suc (n * 2))
+
+  _+1 : ∀ {n : ℕ} → Repr n → Repr (suc n)
+
+  z +1 = 2* z +1
+
+  (2* ม.) +1 = 2* ม. +1
+
+  2* ม. +1 +1 = 2* (ม. +1)
+
+  repr : (n : ℕ) → Repr n
+
+  repr ศูนย์ = z
+
+  repr (suc n) = (ตัวแทน n) +1
+
+  data BinTree {a}(A : Set a) : ตั้งค่าที่
+
+    ใบไม้ : BinTree A
+
+    สาขา : A → BinTree A → BinTree A → BinTree A
+
+  length : ∀ {a}{A : Set a} → BinTree A → ℕ
+
+  ความยาว (ใบ) = 0
+
+  ความยาว (สาขา x ซ้ายขวา) = 1 + ความยาวซ้าย + ความยาวขวา
+
+  _<=_ : ℕ → ℕ → บูล
+
+  ศูนย์ <= m = จริง
+
+  suc n <= ศูนย์ = false
+
+  suc n <= suc m = n <= m
+
+  ผนวก : ∀ {a} {A : ตั้งค่า a}{n : ℕ} → (r : Repr n) → BinTree A → A → BinTree A
+
+  ผนวก r ใบไม้ x = สาขา x ใบไม้
+
+  ต่อท้าย z (สาขา x bt bt₁) x₁ = สาขา x bt bt₁
+
+  ต่อท้าย (2* r) (สาขา x bt bt₁) x₁ = สาขา x (ผนวก r bt x₁) bt₁
+
+  ต่อท้าย 2* r +1 (สาขา x bt bt₁) x₁ = สาขา x bt (ผนวก r bt₁ x₁)
+
+  -- infixl 5 _$_
+
+  -- _$_ : ∀ {a}{A : Set a} → BinTree A → A → BinTree A
+
+  -- ใบไม้ $ x = สาขา x ใบไม้
+
+  -- (สาขา x₁ btl btr) $ x = ถ้า (ความยาว btl <= ความยาว btr) จากนั้นสาขา x₁ (btl $ x) btr อื่น สาขา x₁ btl (btr $ x)
+
+  infixl 5 _$_
+
+  _$_ : ∀ {a}{A : Set a} → BinTree A → A → BinTree A
+
+  bt $ x = ต่อท้าย (repr (ความยาว bt)) bt x
+
+  ต้นไม้ทดสอบ : BinTree ℕ
+
+  ต้นไม้ทดลอง = ใบไม้ $ 1 $ 2 $ 3 $ 4 $ 5 $ 6 $ 7 $ 8
+
+  _!_ : ∀ {a}{A : Set a}{n : ℕ} → (r : Repr n) → (bt : BinTree A) → Maybe A
+
+  ร ! ใบไม้ = ไม่มีอะไร
+
+  ซี ! สาขา x bt bt₁ = ไม่มีอะไร
+
+  (2* ร) ! สาขา x bt bt₁ = r ! bt
+
+  2* z +1 ! สาขา x bt bt₁ = แค่ x
+
+  2* ร +1 ! สาขา x bt bt₁ = r ! bt₁
+
+  ต้นไม้ใหญ่ : ℕ → BinTree ℕ → BinTree ℕ
+
+  ต้นไม้ใหญ่ศูนย์ acc = acc
+
+  ต้นไม้ใหญ่ (suc n) acc = ต้นไม้ใหญ่ (n) (acc $ (suc n))
+
+  เปิดการนำเข้า IO.Primitive
+
+  เปิดการนำเข้า Data.String
+
+  เปิดการนำเข้า Agda.Builtin.Unit
+
+  -- {-# สตริง BUILTIN #-}
+
+  -- {-# หน่วยบิลท์อิน หน่วย #-}
+
+  นำเข้า Data.Nat.Show
+
+  show-maybe : อาจจะ ℕ → สตริง
+
+  show-maybe (เพียง x) = Data.Nat.Show.show x
+
+  แสดงอาจจะไม่มีอะไร = "ไม่มีอะไร"
+
+  หลัก : IO ℕ
+
+  main = (putStrLn (toCostring "สวัสดี") >>=
+
+          (λ x → กลับ (ต้นไม้ใหญ่ 10000 ใบไม้ ) >>=
+
+          (λ x → putStrLn (toCostring (show-maybe(repr 2 ! x)))) >>=
+
+          (λ x → ส่งคืน 1)))
+
+\end{รหัส}
